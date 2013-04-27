@@ -1,12 +1,12 @@
 DESCRIPTION = "A simple daemon to connect libcec to uinput. That is, using your TV to control your PC!"
-HOMEPAGE = "http://libcec.pulse-eight.com/"
+HOMEPAGE = "http://bramp.net/blog/2012/10/libcec-daemon/"
 
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://README;md5=3f0ffbbc5cf3133fc6de91ad9732136d"
 
 DEPENDS = "log4cplus boost libcec"
 
-PR = "r2"
+PR = "r3"
 PV = "0.0.1"
 SRCREV = "cb086865869402fdabe3b9142ea7e6ea3c699c1b"
 SRC_URI = "git://github.com/bramp/libcec-daemon.git"
