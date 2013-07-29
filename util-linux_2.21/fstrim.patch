@@ -1,0 +1,30 @@
+diff --git a/meta/recipes-core/util-linux/util-linux.inc b/meta/recipes-core/util-linux/util-linux.inc
+index 024b55c..74745fd 100644
+--- a/meta/recipes-core/util-linux/util-linux.inc
++++ b/meta/recipes-core/util-linux/util-linux.inc
+@@ -31,7 +31,7 @@ PACKAGES =+ "util-linux-agetty util-linux-fdisk util-linux-cfdisk util-linux-sfd
+              util-linux-mount util-linux-readprofile util-linux-libblkid \
+              util-linux-libblkid-dev util-linux-libuuid util-linux-libuuid-dev \
+              util-linux-uuidgen util-linux-lscpu util-linux-fsck util-linux-blkid \
+-             util-linux-chkdupexe util-linux-mkfs util-linux-mcookie"
++             util-linux-chkdupexe util-linux-mkfs util-linux-mcookie util-linux-fstrim"
+ 
+ EXTRA_OECONF = "--libdir=${base_libdir} --disable-use-tty-group \
+                 --disable-makeinstall-chown --enable-elvtune --enable-init \
+@@ -52,6 +52,7 @@ FILES_util-linux-mount = "${base_bindir}/mount.${PN}"
+ FILES_util-linux-mcookie = "${bindir}/mcookie"
+ FILES_util-linux-umount = "${base_bindir}/umount.${PN}"
+ FILES_util-linux-readprofile = "${base_sbindir}/readprofile.${PN}"
++FILES_util-linux-fstrim = "${base_sbindir}/fstrim"
+ FILES_util-linux-uuidgen = "${bindir}/uuidgen"
+ 
+ FILES_util-linux-libblkid = "${base_libdir}/libblkid.so.*"
+@@ -118,7 +119,7 @@ do_install () {
+ 
+        mkdir -p ${D}${base_bindir}
+ 
+-        sbinprogs="agetty ctrlaltdel cfdisk vipw vigr"
++        sbinprogs="agetty ctrlaltdel cfdisk vipw vigr fstrim"
+         sbinprogs_a="pivot_root hwclock mkswap shutdown mkfs.minix fsck.minix losetup swapon fdisk readprofile fsck blkid sln blockdev"
+         usrbinprogs_a="chfn chsh hexdump last logger mesg newgrp renice wall setsid chrt flock"
+         binprogs_a="dmesg kill more umount mount login reset"
